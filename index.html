@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+<title>CT-RIO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<img id="logo" src="logoct.png" class="logo">   
+
+<div class="carousel">
+
+  <div class="slides">
+    <img src="img1.png">
+    <img src="img2.png">
+    <img src="img3.png">
+  </div>
+
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+
+</div>
+<br><br><br>
+
+<div class="container">
+
+<div class="card">
+<section>
+  <h1>SOBRE A ESCOLA</h1>
+
+  <h3>-INTRODUÇÃO-</h3>
+  <p>
+  ➣ O CT-RIO é uma instituição de ensino que oferece formação educacional e técnica,
+    preparando alunos para o mercado de trabalho e para o ensino superior.
+  </p>
+  <p>
+  ➣ Oferece uma variedade de cursos, incluindo áreas como informática, administração, saúde e meio ambiente,
+    com o objetivo de proporcionar uma educação de qualidade e promover o desenvolvimento pessoal e profissional dos estudantes.
+  </p>
+</section>
+
+<section>
+<h3>-CURSOS-</h3>
+  <p>
+  ➣ Ensino Fundamental (6º ao 9º ano)
+  </p>
+  <p>
+  ➣ Ensino Médio Técnico
+  </p>
+</section>
+<section>
+<h3>-INFRAESTRUTURA-</h3>
+  <p>
+  ➣ O CT-RIO possui uma infraestrutura moderna e bem equipada, com laboratórios de informática, salas de aula climatizadas, biblioteca,
+  quadra poliesportiva e áreas de convivência para os alunos.
+  </p>
+ </section>
+ <section>
+<h3>-LOCALIZAÇÃO-</h3>
+  <p>
+  ➣ Bento Ribeiro: Rua Divisória, 48. Rio de Janeiro / RJ​
+  ➣ Bangu: Rua doze de fevereiro 272. 2 e 3 andar
+  </p>
+ </section>
+</div>
+
+<br><br><br>
+<div class="redes-sociais">
+  <a href="https://www.instagram.com/ctriooficial/" target="_blank">
+  <img src="instagram.png" alt="Instagram">
+  </a>
+  <br>
+  <a href="https://www.facebook.com/ctriooficial" target="_blank">
+  <img src="facebook.png" alt="Facebook">
+  </a>
+  <br><br>
+  <a href="https://www.ct-rio.com.br/" target="_blank">Site Oficial</a>
+</div>
+
+<footer>
+  <p>2026 CT-RIO - Todos os direitos reservados</p>
+</footer>
+
+</body>
+<script>
+let index = 0;
+
+const slides = document.querySelector('.slides');
+const totalSlides = document.querySelectorAll('.slides img').length;
+
+document.querySelector('.next').onclick = () => {
+    index = (index + 1) % totalSlides;
+    updateSlide();
+};
+
+document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateSlide();
+};
+
+function updateSlide() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// auto slide (fora da função)
+setInterval(() => {
+    index = (index + 1) % totalSlides;
+    updateSlide();
+}, 3000);
+</script>
+
+</html>
+</head>

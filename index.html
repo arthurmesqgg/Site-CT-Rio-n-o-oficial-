@@ -13,15 +13,21 @@
 
 <body>
 
+<script id="t0qv0v">
+if (localStorage.getItem('tema') === 'dark') {
+    document.documentElement.classList.add('dark');
+}
+</script>
+
 <img id="logo" src="logoct.png" class="logo">   
 
 <div class="carousel">
 
-  <div class="slides">
-    <img src="img1.png">
-    <img src="img2.png">
-    <img src="img3.png">
-  </div>
+<div class="slides">
+    <img id="img1" src="img1.png">
+    <img id="img2" src="img2.png">
+    <img id="img3" src="img3.png">
+</div>
 
   <button class="prev">&#10094;</button>
   <button class="next">&#10095;</button>
@@ -66,11 +72,11 @@
 <h3>-LOCALIZAÇÃO-</h3>
   <p>
   ➣ Bento Ribeiro: Rua Divisória, 48. Rio de Janeiro / RJ​
-  <br>
   ➣ Bangu: Rua doze de fevereiro 272. 2 e 3 andar
   </p>
  </section>
 </div>
+
 
 <br><br><br>
 <div class="redes-sociais">
@@ -85,11 +91,28 @@
   <a href="https://www.ct-rio.com.br/" target="_blank">Site Oficial</a>
 </div>
 
+<br><br><br>
+
+<div class="toggle-container">
+    <div class="trilho" id="trilho">
+        <div class="indicador"></div>
+    </div>
+
+    <div class="icone-container">
+
+    <img src="lua.png" id="icone-lua" class="icone">
+    <img src="sol.png" id="icone-sol" class="icone">
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
 <footer>
   <p>2026 CT-RIO - Todos os direitos reservados</p>
 </footer>
 
 </body>
+
 <script>
 let index = 0;
 

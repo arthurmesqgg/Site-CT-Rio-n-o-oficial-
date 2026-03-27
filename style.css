@@ -1,11 +1,12 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    color: rgb(0, 44, 187);
+    color: var(--text);
     text-align: center;
-    background: linear-gradient(90deg, #ffffff, #a5a5a5);
+    background: var(--bg);
     min-height: 100vh;
     height: 100%;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 #logo {
@@ -25,20 +26,24 @@ body {
     margin-top: 20px;
     width: 100%;
     max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1, h2, h3 {
     font-family: 'Roboto', sans-serif;
+    color: var(--text);
+    transition: all 0.5s ease;
 }
 
 /* Cards */
 .card {
-    background: #fff;
+    background: var(--card);
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
 .card:hover {
@@ -50,7 +55,7 @@ p {
     line-height: 1.6;
     font-size: 16px;
     padding-left: 10px;
-    border-left: 3px solid #ff7b00;
+    border-left: 3px solid var(--accent);
 }
 
 /* Botões */
@@ -152,4 +157,109 @@ footer {
     padding: 50px;
     background: #222;
     color: white;
+}
+
+/* Modo claro e escuro */
+.trilho {
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.trilho .indicador {
+    width: 50px;
+    height: 50px;
+    background-color: #7a7a7a;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: scale(.9);
+    transition: all 0.4s ease;
+}
+
+
+
+.trilho.dark{
+    background-color: rgb(122, 122, 122);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.trilho.dark .indicador{
+    transform: translateX(50px) scale(.9);
+    background-color: rgb(192, 192, 192);
+
+}
+
+body.dark{
+    --bg: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+    --text: #e0e0e0;
+    --card: #1e1e1e;
+    --accent: #4da6ff;
+}
+
+:root {
+    --bg: linear-gradient(180deg, #ffffff, #7e7e7e);
+    --text: #002cbb;
+    --card: #ffffff;
+    --accent: #ff7b00;
+}
+
+body.dark #logo {
+    filter: 
+        brightness(0.8)
+        contrast(0.9)
+        drop-shadow(0 0 15px rgba(0, 56, 139, 0.8));
+        
+}
+
+.slides img {
+    transition: opacity 0.4s ease;
+}
+
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ícones */
+.icone {
+    width: 60px;
+    margin-top: 8px;
+    display: block;
+}
+
+
+#icone-lua {
+    display: block;
+}
+
+#icone-sol {
+    display: none;
+}
+
+body.dark #icone-sol {
+    display: block;
+}
+
+body.dark #icone-lua {
+    display: none;
+}
+
+#icone-lua,
+#icone-sol {
+    width: 60px;
+    margin-top: 10px;
+
+    position: static;
 }

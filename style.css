@@ -219,6 +219,8 @@ body.dark #logo {
         drop-shadow(0 0 15px rgba(0, 56, 139, 0.8));
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
+        width: 100%;
+        max-width: 400px;
 }
 
 .slides img {
